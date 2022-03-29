@@ -1,0 +1,65 @@
+Username: patrina_user
+AccessKey: 2HVOY19HOW9OWNWA1FUY
+SecretAccessKey: owvWW0ZHb9E9gGPjFWXgOHrNWSi=fHMzQO6PD7rU
+
+
+./ansible-playbook -i env/s3config/inventory tooling-playbooks/generate-account-access-key.yml -e 'account_name=patrina_lu_cli account_email=lucheukting@yahoo.com.hk ui_username=pat_account_cli ui_password=test container_name_suffix=""'
+
+
+ring > supervisor > s3
+
+/srv/scality/s3/s3-offline/repo/venv/bin/ansible -i \
+     /srv/scality/s3/s3-offline/federation/env/s3config/inventory all -m command -a 'docker ps'
+	 
+	 
+salt shore cmd.shell 'docker ps -q -a | xargs -r docker stop'
+	 
+	 
+salt <machine_minion_name> cmd.shell 'docker ps'
+
+date '+%s'
+date -d@1648087326
+
+
+salt -G roles:ROLE_S3 cmd.run 'grep service /var/log/s3/scality-s3/logs/s3-0.log'
+
+https://documentation.scality.com/RING/8.5.2/reference/bizio_concepts_and_parameters/scaldisk/subcommand_iods.html?highlight_exact=scaldisk%20iods%20&highlight_partial=iod
+
+salt '*' grains.get roles << every role to install node
+
+salt -G roles:ROLE_STORE cmd.run 'cat /etc/salt/grains' << target to the role and define by the OS
+
+[root@ring-sghkeu2-pl-supervisor supapi]# cd /srv/scality/pillar/
+[root@ring-sghkeu2-pl-supervisor pillar]# ls -l
+total 64
+-rw-r--r--  1 root root 5258 Mar 23 08:22 scality-common.sls
+-rw-r--r--. 1 root root 5307 Mar 22 00:50 scality-common.sls.2022032308151648023353091230104
+-rw-r--r--  1 root root 5307 Mar 23 08:15 scality-common.sls.2022032308151648023353144382628
+-rw-r--r--  1 root root 5307 Mar 23 08:15 scality-common.sls.2022032308151648023355985062648
+-rw-r--r--. 1 root root  133 Mar 23 08:22 store-0.sls
+-rw-r--r--. 1 root root  133 Mar 23 08:22 store-1.sls
+-rw-r--r--. 1 root root  133 Mar 23 08:22 store-2.sls
+-rw-r--r--. 1 root root  133 Mar 23 08:22 store-3.sls
+-rw-r--r--. 1 root root  133 Mar 23 08:22 store-4.sls
+-rw-r--r--. 1 root root  133 Mar 23 08:22 store-5.sls
+-rw-r--r--. 1 root root   44 Mar 23 08:22 supervisor.sls
+-rw-r--r--. 1 root root  457 Mar 23 08:22 top.sls
+
+
+srebuildd.conf << trigger the repeter << end with 70 is the key ID
+access all the trunk, if there is any missing trunk, << apache
+
+not enough space, the relocation cannot be done
+
+curl -Ls http://localhost:4443/api/v0.1/es_proxy/_cat/indices/
+
+
+showConfigDiffs << show the dirr
+
+
+network issue on the getting to the node
+
+
+for NODE in $(for RING in $(ringsh supervisor ringList); do ringsh supervisor ringStatus ${RING}|grep 'Node: '|grep ${SERVER}|cut -d ' ' -f 3; done); do ringsh supervisor nodeLeave ${NODE/:/ }; done
+
+OOS-SYS -> ssd get some problem but will not do the rebuild
